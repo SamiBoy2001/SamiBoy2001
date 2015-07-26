@@ -1,0 +1,26 @@
+
+ # CodeBook for nxtidy.csv
+
+   Subj/Actvty:
+
+       subject IDs: 1 - 30
+       activty labels: 
+               1. "walking"
+               2. "walking_upstairs"
+               3. "walking_down_stairs"
+               4. "sitting"
+               5. "standing"
+               6. "lying"
+        variables processed for Subj/Actvty:
+        Test + Train  
+                tBodyAccMag-mean
+                tBodyAccJerkMag-mean
+                tBodyGyroMag-mean
+                tBodyGyroMag-mean
+                tBodyGyroJerkMag-mean
+
+
+
+
+
+  
