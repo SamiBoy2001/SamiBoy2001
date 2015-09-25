@@ -1,9 +1,6 @@
-###run_analysis.R - Getting and Cleaning Data Course Project 
-###  It performs the following ########### 1:5 required steps -
+##run_analysis.R - Getting and Cleaning Data Course Project - It performs the 5 required steps - ############ 1:5 below
 
- ### check if both input data sets exist 
-
- if[!file.exists("X_train.txt") | !file.exists("X_test.txt") ) stop("one or more input datasets are missing.")
+if[!file.exists("X_train.txt") | !file.exists("X_test.txt") ) stop("one or more input datasets are missing.")
 
  library(datasets)
  library(plyr)
