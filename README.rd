@@ -14,7 +14,7 @@
                  tBodyGyroMag-mean
                  tBodyGyroJerkMag-mean
 
-               These measurement were selected  because  they reprsent normal distribution of one of each of the types of 
+               These measurement were selected  because  they represent complete-observations of  normal distribution of one of each of the types of 
                signals processed for  training and test data sets.
 
                The R packages used are:

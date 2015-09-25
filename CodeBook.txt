@@ -1,23 +1,28 @@
 
  # CodeBook for nxtidy.txt
 
-   Subj/Actvty:
+ Input Data Sets: 
+  
+   X_train.txt
+   X_test.txt
 
-       subject IDs: 1 - 30
-       activty labels: 
-               1. "walking"
-               2. "walking_upstairs"
-               3. "walking_down_stairs"
-               4. "sitting"
-               5. "standing"
-               6. "lying"
-        variables processed for Subj/Actvty:
-        Test + Train  
-                tBodyAccMag-mean
-                tBodyAccJerkMag-mean
-                tBodyGyroMag-mean
-                tBodyGyroMag-mean
-                tBodyGyroJerkMag-mean
+   Mutated Variables: 
+    Subj, 1:30
+     ActvtyID, c( 
+                "walking",
+                 "walking_upstairs",
+               "walking_down_stairs",
+              "sitting",
+                "standing",
+                "lying", )
+  
+   Measurement Variables selected (mean only)  to be aggregated over each Sub/ActvtyID pair:
+         
+      V201:     tBodyAccMag-mean              >  "AVG-TBodyAccMagMean"
+      V214:     tBodyAccJerkMag-mean      >  "AVG-TGravityAccMagMean"
+      V227:    tBodyGyroMag-mean             >   "AVG-TBodyAccJerkMagMean
+      V240:    tBodyGyroMag-mean             >   "AVG-TBodyGyroMagMean"
+      V253      tBodyGyroJerkMag-mean    >   "AVG-TBodyGyroJerkMagMean"
 
 
 
