@@ -1,5 +1,5 @@
 
- # CodeBook for nxtidy.csv
+ # CodeBook for nxtidy.txt
 
    Subj/Actvty:
 

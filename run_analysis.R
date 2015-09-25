@@ -16,7 +16,9 @@ library(util); library(reshape2); library(data.frame)
 
 ### combine X_train, X_test
 
-   nnxt <- rbind("nxt", xtr, xts)
+   nnxt <- data.frame()
+
+   nnxt <- rbind(nnxt, xtr, xts)
 
 ### class(nnxt) [1] "data.frame
 ### dim(nnxt)   [1] 10300   561
@@ -35,18 +37,13 @@ library(util); library(reshape2); library(data.frame)
 ### dim(nxtm)    [1] 308970    563
 
 ### melt newly merged values to reshape dataset to include only the selected set of measurements for each subject/activity pair.
-
   
- nxtmelt <- melt(nxtm, id.var =c("subject", "activity"), measure.vars = c("V201","V214","V227","V240","V253"), na.rm = FALSE,value.name = "mean", FactorsAsStrings = TRUE ) 
+    
+    nxtmelt <- melt(nxtm, id.var =c("subject", "activity"), measure.vars = c("V201","V214","V227","V240","V253"),  na.rm = TRUE ) 
 
-### class(nxtmelt)  [1] "data.frame"
-### dim(nxtmelt)    [1] 1544850       6
+### dcast the molted data into R data.frame
 
-### cast the molted data into R data.frame
-
-  xavg <- function(x) { sum(x) / length(x) }
-
-  nxtd <- dcast(nxtmelt, id ~ variable, xavg )
+    nxtd <- dcast(nxtmelt, value ~  variable , mean )
 
 ### create meaningful labels for the newly cast tidy data.frame.
 
@@ -66,16 +63,16 @@ library(util); library(reshape2); library(data.frame)
     Subj/ActvtyID AVG-TBodyAccMagMean AVG-TBodyAccMagStd AVG-TGravityAccMagMean AVG-TGravityAccMagStd AVG-TBodyAccJerkMagMean
 ###           25          -0.5734453         -0.7393470             -0.6815771            -0.5342159              -0.7238450
 ###           26          -0.4741126         -0.7046635             -0.8158497            -0.6552844              -0.7459303
-###           27          -0.4183619         -0.6765072             -0.6891694            -0.7645228              -0.7233935
+###           27          -0.4183619         -0.6765072             -0.6891694            -0.7645228              -0.7233935 
 ###           28          -0.4041563         -0.5627135             -0.6731994            -0.7428532              -0.7870956
 ###           29          -0.4498744         -0.3765796             -0.5904639            -0.7233425              -0.8381887
 ###           30          -0.6015294         -0.3991866             -0.5719557            -0.6821019              -0.7632079
  
 ### write the tidy data set
 
-   write.table(nxtd, file = "nxtidy.csv", quote = FALSE, sep = " ", eol = '\n', dec = ".",  col.names = TRUE)
+   write.table(nxtd, file = "nxtidy.txt", quote = FALSE, sep = " ", eol = '\n', dec = ".",  col.names = TRUE)
 
- file.exists("nxtidy.csv")
+ file.exists("nxtidy.txt")
 
 ### [1] TRUE
 

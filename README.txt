@@ -8,20 +8,21 @@
                 while wearing their samsung smart phones on the wrists. The measurement
                 selected to produce nxtidy report are:  
 
-                The measurements are: 
-                
+                            
                  tBodyAccMag-mean
                  tGravityAccMag-mean
                  tBodyAccJerkMag-mean
                  tBodyGyroMag-mean
                  tBodyGyroJerkMag-mean
 
-               These measurement were selected as the variables in creating the tidy csv report because
-               they reprsent normal distribution of one of each of the types of signals processed for 
-               training and test data sets.
+               These measurement were selected  because  they reprsent normal distribution of one of each of the types of 
+               signals processed for  training and test data sets.
 
                The R packages used are:
-               utility; reshape2
+                reshape2
+                plyr
+                dplyr
+             
 
                
 
